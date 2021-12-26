@@ -8,7 +8,7 @@ pip3 install requests
 for var in "$@":
 do
     python3 fetch.py $var && git add $var && git commit -m "Import schedule for $var" &
-    pids[${var}] = $!
+    pids[${var}]=$!
 done
 
 for pid in ${pids[*]}
